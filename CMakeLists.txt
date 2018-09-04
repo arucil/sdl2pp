@@ -3,6 +3,6 @@ project(sdl2pp)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(sdl2pp main.cpp)
+add_executable(sdl2pp main.cpp internal/Window.h internal/macros.h)
 
 add_definitions(-DSDL2PP_USE_IMAGE)

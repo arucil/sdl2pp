@@ -2,16 +2,9 @@
 #define SDL2PP_INIT_H
 
 #include <SDL2/SDL.h>
-#include <sstream>
 #include "Exception.h"
+#include "macros.h"
 
-
-#define SDL2PP_THROW(function) \
-    do { \
-        std::ostringstream sout; \
-        sout << function ": " << SDL_GetError(); \
-        throw Exception(sout.str()); \
-    } while (false)
 
 namespace sdl2pp {
 
@@ -19,7 +12,7 @@ namespace sdl2pp {
     public:
         explicit Init(Uint32 flags) {
             if (SDL_Init(flags) < 0) {
-                SDL2PP_THROW("SDL_Init()");
+                SDL2PP_THROW("SDL_Init");
             }
         }
 
@@ -35,6 +28,5 @@ namespace sdl2pp {
 
 }
 
-#undef SDL2PP_THROW
 
 #endif //SDL2PP_INIT_H

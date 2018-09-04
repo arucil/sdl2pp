@@ -12,7 +12,7 @@ namespace sdl2pp {
         explicit InitImage(int flags) {
             if ((IMG_Init(flags) & flags) != flags) {
                 std::ostringstream sout;
-                sout << "IMG_Init(): " << IMG_GetError();
+                sout << "IMG_Init: " << IMG_GetError();
                 throw Exception(sout.str());
             }
         }
