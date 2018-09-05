@@ -1,8 +1,6 @@
 #ifndef SDL2PP_INIT_H
 #define SDL2PP_INIT_H
 
-#include <SDL2/SDL.h>
-#include "Exception.h"
 #include "define.h"
 
 
@@ -10,15 +8,9 @@ namespace sdl2pp {
 
     class Init {
     public:
-        explicit Init(Uint32 flags) {
-            if (SDL_Init(flags) < 0) {
-                SDL2PP_THROW("SDL_Init");
-            }
-        }
+        explicit Init(Uint32 flags);
 
-        ~Init() {
-            SDL_Quit();
-        }
+        ~Init();
 
         Init(const Init &) = delete;
         Init &operator=(const Init &) = delete;
