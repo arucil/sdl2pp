@@ -1,9 +1,10 @@
 #ifndef SDL2PP_WINDOW_H
 #define SDL2PP_WINDOW_H
 
+#include <string>
 #include <SDL2/SDL.h>
 #include "Exception.h"
-#include "macros.h"
+#include "define.h"
 
 namespace sdl2pp {
 
@@ -45,6 +46,20 @@ namespace sdl2pp {
             return handle;
         }
 
+        Point getSize() const {
+            Point pt;
+            SDL_GetWindowSize(handle, &pt.x, &pt.y);
+            return pt;
+        }
+
+        void setSize(const Point &size) {
+            SDL_SetWindowSize(handle, size.x, size.y);
+        }
+
+        void setSize(int w, int h) {
+            SDL_SetWindowSize(handle, w, h);
+        }
+
         int getWidth() const {
             int w;
             SDL_GetWindowSize(handle, &w, nullptr);
@@ -55,6 +70,18 @@ namespace sdl2pp {
             int h;
             SDL_GetWindowSize(handle, nullptr, &h);
             return h;
+        }
+
+        void setTitle(const char *title) {
+            SDL_SetWindowTitle(handle, title);
+        }
+
+        void setTitle(const std::string &title) {
+            SDL_SetWindowTitle(handle, title.c_str());
+        }
+
+        std::string getTitle() const {
+            return SDL_GetWindowTitle(handle);
         }
 
     private:

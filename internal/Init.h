@@ -3,7 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include "Exception.h"
-#include "macros.h"
+#include "define.h"
 
 
 namespace sdl2pp {
