@@ -26,6 +26,8 @@ namespace sdl2pp {
 #endif
     }
 
+    Surface::Surface(SDL_Surface *surface) : handle(surface) {}
+
     Surface::~Surface() {
         if (nullptr != handle) {
             SDL_FreeSurface(handle);
@@ -42,10 +44,19 @@ namespace sdl2pp {
     }
 
     void Surface::blit(const Surface &src, const optional<const Rect> &srcRect, const optional<Rect> &destRect) {
-        auto destRect1 = destRect;
-        if (SDL_BlitSurface(src.get(), toPointer(srcRect), handle, toPointer(destRect1)) < 0) {
+        if (SDL_BlitSurface(src.get(), toPointer(srcRect), handle, toPointer(destRect)) < 0) {
             SDL2PP_THROW("SDL_BlitSurface");
         }
+    }
+
+    Surface Surface::convert(const SDL_PixelFormat *format, Uint32 flags) {
+        auto surface = SDL_ConvertSurface(handle, format, flags);
+
+        if (nullptr == surface) {
+            SDL2PP_THROW("SDL_ConvertSurface");
+        }
+
+        return Surface(surface);
     }
 
 }

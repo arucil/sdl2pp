@@ -38,6 +38,18 @@ namespace sdl2pp {
 
         void copy(const Texture &, const optional<const Rect> &srcRect, const optional<const Rect> &destRect);
 
+        void setDrawColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
+
+        void fill();
+
+        void fillRect(const Rect &);
+
+        void drawRect(const Rect &);
+
+        void drawLine(int x1, int y1, int x2, int y2);
+
+        void drawPoint(int x, int y);
+
     private:
         SDL_Renderer *handle;
     };

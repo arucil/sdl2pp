@@ -12,6 +12,8 @@ namespace sdl2pp {
         explicit Surface(const std::string &path);
         explicit Surface(const char *path);
 
+        explicit Surface(SDL_Surface *);
+
         Surface(const Surface &) = delete;
 
         Surface(Surface &&other) noexcept : handle(other.handle) {
@@ -30,7 +32,25 @@ namespace sdl2pp {
             return handle;
         }
 
+        SDL_Surface &operator*() {
+            return *handle;
+        }
+
+        SDL_Surface *operator->() {
+            return handle;
+        }
+
+        const SDL_Surface &operator*() const {
+            return *handle;
+        }
+
+        const SDL_Surface *operator->() const {
+            return handle;
+        }
+
         void blit(const Surface &src, const optional<const Rect> &srcRect, const optional<Rect> &destRect);
+
+        Surface convert(const SDL_PixelFormat *, Uint32 flags);
 
     private:
         SDL_Surface *handle;

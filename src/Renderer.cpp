@@ -43,4 +43,40 @@ namespace sdl2pp {
         }
     }
 
+    void Renderer::setDrawColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
+        if (SDL_SetRenderDrawColor(handle, r, g, b, a) < 0) {
+            SDL2PP_THROW("SDL_SetRenderDrawColor");
+        }
+    }
+
+    void Renderer::fill() {
+        if (SDL_RenderFillRect(handle, nullptr) < 0) {
+            SDL2PP_THROW("SDL_RenderFillRect");
+        }
+    }
+
+    void Renderer::fillRect(const Rect &rect) {
+        if (SDL_RenderFillRect(handle, &rect) < 0) {
+            SDL2PP_THROW("SDL_RenderFillRect");
+        }
+    }
+
+    void Renderer::drawRect(const sdl2pp::Rect &rect) {
+        if (SDL_RenderDrawRect(handle, &rect) < 0) {
+            SDL2PP_THROW("SDL_RenderDrawRect");
+        }
+    }
+
+    void Renderer::drawLine(int x1, int y1, int x2, int y2) {
+        if (SDL_RenderDrawLine(handle, x1, y1, x2, y2) < 0) {
+            SDL2PP_THROW("SDL_RenderDrawLine");
+        }
+    }
+
+    void Renderer::drawPoint(int x, int y) {
+        if (SDL_RenderDrawPoint(handle, x, y) < 0) {
+            SDL2PP_THROW("SDL_RenderDrawPoint");
+        }
+    }
+
 }
