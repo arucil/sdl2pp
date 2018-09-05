@@ -37,7 +37,7 @@ namespace sdl2pp {
         SDL_RenderPresent(handle);
     }
 
-    void Renderer::copy(const Texture &texture, const optional<const Rect> &srcRect, const optional<const Rect> &destRect) {
+    void Renderer::copy(const Texture &texture, const optional<Rect> &srcRect, const optional<Rect> &destRect) {
         if (SDL_RenderCopy(handle, texture.get(), toPointer(srcRect), toPointer(destRect)) < 0) {
             SDL2PP_THROW("SDL_RenderCopy");
         }

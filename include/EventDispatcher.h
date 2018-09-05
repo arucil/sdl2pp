@@ -55,6 +55,8 @@ namespace sdl2pp {
 
         SDL2PP_LIST_EVENTS1
 
+#undef EVENT_ACTION
+
 #define EVENT_ACTION(event,var,member)          std::function<void ()> var;
 
         SDL2PP_LIST_EVENTS0

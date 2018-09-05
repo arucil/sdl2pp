@@ -48,7 +48,7 @@ namespace sdl2pp {
             return handle;
         }
 
-        void blit(const Surface &src, const optional<const Rect> &srcRect, const optional<Rect> &destRect);
+        void blit(const Surface &src, const optional<Rect> &srcRect, const optional<Rect> &destRect);
 
         Surface convert(const SDL_PixelFormat *, Uint32 flags);
 

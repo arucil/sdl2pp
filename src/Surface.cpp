@@ -43,8 +43,9 @@ namespace sdl2pp {
         return *this;
     }
 
-    void Surface::blit(const Surface &src, const optional<const Rect> &srcRect, const optional<Rect> &destRect) {
-        if (SDL_BlitSurface(src.get(), toPointer(srcRect), handle, toPointer(destRect)) < 0) {
+    void Surface::blit(const Surface &src, const optional<Rect> &srcRect, const optional<Rect> &destRect) {
+        optional<Rect> destRect1 = destRect;
+        if (SDL_BlitSurface(src.get(), toPointer(srcRect), handle, toPointer(destRect1)) < 0) {
             SDL2PP_THROW("SDL_BlitSurface");
         }
     }

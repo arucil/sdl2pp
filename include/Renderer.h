@@ -36,7 +36,7 @@ namespace sdl2pp {
 
         void present();
 
-        void copy(const Texture &, const optional<const Rect> &srcRect, const optional<const Rect> &destRect);
+        void copy(const Texture &, const optional<Rect> &srcRect, const optional<Rect> &destRect);
 
         void setDrawColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
