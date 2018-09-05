@@ -22,7 +22,12 @@
 namespace sdl2pp {
 
     template <typename T>
-    inline T *toPointer(const optional<T> &opt) {
+    inline T *toPointer(optional<T> &opt) {
+        return opt ? &*opt : nullptr;
+    }
+
+    template <typename T>
+    inline const T *toPointer(const optional<T> &opt) {
         return opt ? &*opt : nullptr;
     }
 
