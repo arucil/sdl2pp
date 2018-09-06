@@ -58,6 +58,7 @@ namespace sdl2pp {
         if (SDL_GetTextureBlendMode(handle, &mode) < 0) {
             SDL2PP_THROW("SDL_GetTextureBlendMode");
         }
+        return mode;
     }
 
     void Texture::setAlphaMod(Uint8 alpha) {
@@ -71,6 +72,7 @@ namespace sdl2pp {
         if (SDL_GetTextureAlphaMod(handle, &alpha) < 0) {
             SDL2PP_THROW("SDL_GetTextureAlphaMod");
         }
+        return alpha;
     }
 
 }
