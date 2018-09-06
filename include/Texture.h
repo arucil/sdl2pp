@@ -42,7 +42,11 @@ namespace sdl2pp {
 
         void setBlendMode(SDL_BlendMode);
 
+        SDL_BlendMode getBlendMode() const;
+
         void setAlphaMod(Uint8 alpha);
+
+        Uint8 getAlphaMod() const;
 
     private:
         SDL_Texture *handle;
