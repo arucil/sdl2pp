@@ -40,6 +40,10 @@ namespace sdl2pp {
             return handle;
         }
 
+        void setBlendMode(SDL_BlendMode);
+
+        void setAlphaMod(Uint8 alpha);
+
     private:
         SDL_Texture *handle;
     };
