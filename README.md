@@ -28,10 +28,7 @@ int main() {
         EventDispatcher e;
         
         /* Handle events with lambda expressions */
-        /* Note that an alias QuitEvent to SDL_QuitEvent is provided for convenience,
-         * so are some other types. See the source code for details.
-         */
-        e.quit = [&quit](const QuitEvent &event) {
+        e.quit = [&quit](const SQL_QuitEvent &event) {
             quit = true;
         };
         
