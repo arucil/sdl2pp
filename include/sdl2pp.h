@@ -10,5 +10,6 @@
 #include "Renderer.h"
 #include "Texture.h"
 #include "EventDispatcher.h"
+#include "Event.h"
 
 #endif //SDL2PP_SDL2PP_H
