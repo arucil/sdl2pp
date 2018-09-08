@@ -49,6 +49,20 @@ namespace sdl2pp {
         }
     }
 
+    void Renderer::setDrawBlendMode(SDL_BlendMode mode) {
+        if (SDL_SetRenderDrawBlendMode(handle, mode) < 0) {
+            SDL2PP_THROW("SDL_SetRenderDrawBlendMode");
+        }
+    }
+
+    SDL_BlendMode Renderer::getDrawBlendMode() const {
+        SDL_BlendMode mode;
+        if (SDL_GetRenderDrawBlendMode(handle, &mode) < 0) {
+            SDL2PP_THROW("SDL_GetRenderDrawBlendMode");
+        }
+        return mode;
+    }
+
     void Renderer::fill() {
         if (SDL_RenderFillRect(handle, nullptr) < 0) {
             SDL2PP_THROW("SDL_RenderFillRect");

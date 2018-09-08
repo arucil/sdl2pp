@@ -40,6 +40,10 @@ namespace sdl2pp {
 
         void setDrawColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
+        void setDrawBlendMode(SDL_BlendMode);
+
+        SDL_BlendMode getDrawBlendMode() const;
+
         void fill();
 
         void fillRect(const Rect &);
