@@ -11,14 +11,14 @@ namespace sdl2pp {
     EVENT_ACTION(SDL_QUIT, quitEvent, quit) \
     EVENT_ACTION(SDL_WINDOWEVENT, windowEvent, window) \
     EVENT_ACTION(SDL_SYSWMEVENT, sysWMEvent, syswm) \
-    EVENT_ACTION(SDL_KEYDOWN, keyDownEvent, key) \
-    EVENT_ACTION(SDL_KEYUP, keyUpEvent, key) \
-    EVENT_ACTION(SDL_TEXTEDITING, textEditingEvent, edit) \
-    EVENT_ACTION(SDL_TEXTINPUT, textInputEvent, text) \
-    EVENT_ACTION(SDL_MOUSEMOTION, mouseMotionEvent, motion) \
-    EVENT_ACTION(SDL_MOUSEBUTTONDOWN, mouseButtonDownEvent, button) \
-    EVENT_ACTION(SDL_MOUSEBUTTONUP, mouseButtonUpEvent, button) \
-    EVENT_ACTION(SDL_MOUSEWHEEL, mouseWheelEvent, wheel) \
+    EVENT_ACTION(SDL_KEYDOWN, keyDown, key) \
+    EVENT_ACTION(SDL_KEYUP, keyUp, key) \
+    EVENT_ACTION(SDL_TEXTEDITING, textEditing, edit) \
+    EVENT_ACTION(SDL_TEXTINPUT, textInput, text) \
+    EVENT_ACTION(SDL_MOUSEMOTION, mouseMove, motion) \
+    EVENT_ACTION(SDL_MOUSEBUTTONDOWN, mouseButtonDown, button) \
+    EVENT_ACTION(SDL_MOUSEBUTTONUP, mouseButtonUp, button) \
+    EVENT_ACTION(SDL_MOUSEWHEEL, mouseWheel, wheel) \
     EVENT_ACTION(SDL_JOYAXISMOTION, joyAxisMotion, jaxis) \
     EVENT_ACTION(SDL_JOYBALLMOTION, joyBallMotion, jball) \
     EVENT_ACTION(SDL_JOYHATMOTION, joyHatMotion, jhat) \
