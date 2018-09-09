@@ -34,7 +34,7 @@ namespace sdl2pp {
     EVENT_ACTION(SDL_CONTROLLERDEVICEREMAPPED, controllerDeviceRemapped, cdevice) \
     EVENT_ACTION(SDL_FINGERDOWN, fingerDown, tfinger) \
     EVENT_ACTION(SDL_FINGERUP, fingerUp, tfinger) \
-    EVENT_ACTION(SDL_FINGERMOTION, fingerMotion, tfinger) \
+    EVENT_ACTION(SDL_FINGERMOTION, fingerMove, tfinger) \
     EVENT_ACTION(SDL_DOLLARGESTURE, dollarGesture, dgesture) \
     EVENT_ACTION(SDL_DOLLARRECORD, dollarRecord, dgesture) \
     EVENT_ACTION(SDL_MULTIGESTURE, multiGesture, mgesture) \
